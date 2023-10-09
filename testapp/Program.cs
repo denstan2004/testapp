@@ -38,7 +38,7 @@ if (!app.Environment.IsDevelopment())
     });
 }
 app.UseCors(builder => builder
-    .WithOrigins("http://localhost:3000") // Розділіть по комах, якщо потрібно додати більше доменів 
+    .WithOrigins("https://red-plant-098bd5010.3.azurestaticapps.net") // Розділіть по комах, якщо потрібно додати більше доменів 
     .AllowAnyHeader()
     .AllowAnyMethod()
 );
