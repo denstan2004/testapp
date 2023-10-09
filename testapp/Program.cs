@@ -38,7 +38,7 @@ if (!app.Environment.IsDevelopment())
     });
 }
 app.UseCors(builder => builder
-    .WithOrigins("*") // Розділіть по комах, якщо потрібно додати більше доменів http://localhost:3000
+    .WithOrigins("*") // Розділіть по комах, якщо потрібно додати більше доменів 
     .AllowAnyHeader()
     .AllowAnyMethod()
 );
