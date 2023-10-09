@@ -14,9 +14,9 @@ namespace testapp.Controllers
         }
 
         [HttpGet("getAll/Clothes")]
-        public List<int> getallInt()
+        public string getallString()
         {
-           return userRepository.SelectAll();
+            return "Люблю напутку";
         }
 
     }
