@@ -37,11 +37,7 @@ if (!app.Environment.IsDevelopment())
         return next();
     });
 }
-app.UseCors(builder => builder
-    .WithOrigins("https://red-plant-098bd5010.3.azurestaticapps.net") // Розділіть по комах, якщо потрібно додати більше доменів 
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-);
+
 
 
 app.UseHttpsRedirection();
