@@ -12,6 +12,7 @@ namespace testapp.Enteties
         public string Email { get; set; }
 
         public string Password { get; set; }
+        
 
  //  [EnumDataType(typeof(Roles))]
  

@@ -22,5 +22,11 @@ namespace testapp.DAL.Repositories
             }
             return ints;
         }
+        public void Create(User entity)
+        {
+            _context.User.Add(entity);
+            _context.SaveChanges();
+
+        }
     }
 }

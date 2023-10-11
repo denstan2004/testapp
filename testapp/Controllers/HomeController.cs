@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using testapp.DAL.Repositories;
+using testapp.Enteties;
 
 namespace testapp.Controllers
 {
@@ -16,9 +17,13 @@ namespace testapp.Controllers
         [HttpGet("getAll/Clothes")]
         public List<int> getallInt()
         {
-            List <int> list = new List<int>();
-            list.Add (2);
-           return list;
+           return userRepository.SelectAll();
+        }
+        [HttpPost("add/User")]
+        public void saveUser([FromBody] User user)
+        {
+             userRepository.Create(user);
+          
         }
 
     }
