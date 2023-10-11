@@ -26,23 +26,21 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 
-    // Äîäàéòå URL-ïåðåàäðåñàö³þ äëÿ âñ³õ óðë³â íà âàø áàçîâèé URL
     app.Use((context, next) =>
     {
-        context.Request.Scheme = "https"; // Àáî "http", â çàëåæíîñò³ â³ä ïðîòîêîëó
+        context.Request.Scheme = "https";
         context.Request.Host = new HostString("testappfuck.azurewebsites.net");
         return next();
     });
 }
+
 app.UseCors(builder => builder
-    .WithOrigins("https://red-plant-098bd5010.3.azurestaticapps.net/") // Розділіть по комах, якщо потрібно додати більше доменів 
+    .WithOrigins("https://red-plant-098bd5010.3.azurestaticapps.net")
     .AllowAnyHeader()
     .AllowAnyMethod()
 );
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
